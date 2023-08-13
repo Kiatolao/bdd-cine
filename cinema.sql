@@ -1,3 +1,4 @@
+-- Active: 1690821001439@@127.0.0.1@3307@cinema
 # Roles table
 CREATE TABLE roles (
     id INT PRIMARY KEY  NOT NULL AUTO_INCREMENT,
@@ -17,6 +18,9 @@ CREATE TABLE users (
     login VARCHAR(50) NOT NULL,
     password VARCHAR(100) NOT NULL,
 );
+
+ALTER TABLE users
+ADD student BOOLEAN NOT NULL DEFAULT 0;
 
 ALTER TABLE users
 ADD CONSTRAINT constraint_role
@@ -40,6 +44,9 @@ CREATE TABLE customers (
     id INT PRIMARY KEY  NOT NULL AUTO_INCREMENT,
     birth_date DATE NOT NULL
 );
+
+ALTER TABLE customers
+ADD student BOOLEAN NOT NULL DEFAULT 0;
 
 INSERT INTO customers (birth_date) 
 VALUES ('1990-06-17'), ('1984-04-17'), ('1984-10-21'), ('2000-01-19'), ('1968-04-03'), ('1997-01-21');
